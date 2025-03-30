@@ -1,0 +1,96 @@
+/* em vs rem
+나누는 기준:
+1. 부모 요소의 사이즈에 따라서 사이즈가 변경 되어야 한다면:
+- %, em
+1.b. 부모와 상관없이 사이즈에 대해서 반응해야 된다면 vw,vh, rem 사용
+
+2. 요소의 너비와 높이에 따라서 사이즈가 변경되어야 한다면:
+- %, vh, vw 사용
+2.b. 폰트 사이즈에 따라서 사이즈가 변경되어야한다면: 
+em, rem 사용
+
+em: relative to parent element's font size
+rem: relative to root element
+
+ */
+
+.level1 {
+    /* 32px, rem 사용하면 다 32px*/
+    font-size: 2em;
+}
+
+.level2 {
+    /* 64px */
+    font-size: 2em;
+}
+
+.level3 {
+    /* 128px */
+    font-size: 2em;
+}
+
+.level4 {
+    /* 256px */
+    font-size: 2em;
+}
+
+/* h1 {
+    display: inline-block;
+    font-size: 5em;
+    background-color: mediumaquamarine;
+    padding: 0.1em;
+}
+
+@media screen and (max-width:780px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width:680px) {
+    h1 {
+        font-size: 1.5em;
+    }
+} */
+
+h1 {
+    /*28px*/
+    font-size: 1.75rem;
+    color: burlywood;
+    margin: auto;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    /*32px top,bottom,right,left*/
+    padding: 2em;
+}
+
+.component {
+    border: 1px solid burlywood;
+    /*16px*/
+    margin: 1em;
+}
+
+.title {
+    /*24px = 1.5 * 16 */
+    font-size: 1.5rem;
+    /*24px -> following font-size of title div */
+    padding: 1em;
+    background-color: burlywood;
+}
+
+.contents {
+    /*18px = 1.125 * 16*/
+    font-size: 1.125rem;
+    /*18px -> following font-size of contetns div */
+    padding: 1em;
+}
+
+/* 48 rem = 16 * 48 = 768px */
+@media screen and (max-width: 48rem) {
+    .container {
+        flex-direction: column;
+    }
+}
